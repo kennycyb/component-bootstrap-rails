@@ -10,13 +10,15 @@ module Tabpane
           @active  = options[:active]
         end
 
-        def add_link (name, options = {})
+        def link (name, options = {}, &block)
           tab = Tabpane::Tab::LinkTo.new(@context, name, options)
+          yield(block) if block_given?
           @tabs << tab
         end
 
-        def add_panel (name, options = {})
+        def panel (name, options = {}, &block)
           tab = Tabpane::Tab::Panel.new(@context, name, options)
+          yield(block) if block_given?
           @tabs << tab
         end
 
@@ -26,13 +28,15 @@ module Tabpane
 
           @tabs.each do |tab|
             tab.active = @active
-            tabs_nav << tab.header_html
-            tabs_div << tab.content_html
+            tabs_nav << tab.header
+            tabs_div << tab.render
           end
 
           tabs_nav << '</ul>'
           tabs_div << '</div>'
-          return (tabs_nav + tabs_div).html_safe
+          puts tabs_nav
+          puts tabs_div
+          return (tabs_nav + tabs_div)
         end
       end
     end

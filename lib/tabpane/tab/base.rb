@@ -24,7 +24,7 @@ module Tabpane
         @active == @name
       end
 
-      def header (active)
+      def header
         attrs = active? ? ' class="active"' : ''
         html  = "<li#{attrs}>"
         html << link
@@ -34,7 +34,7 @@ module Tabpane
 
       def render
         body = content
-        return unless body
+        return '' unless body
 
         html << "<div id=\"#{@name}\" class=\"tab-pane fade"
         html << 'in active' if active?

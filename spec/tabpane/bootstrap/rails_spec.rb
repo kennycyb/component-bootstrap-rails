@@ -6,6 +6,14 @@ describe Tabpane::Bootstrap::Rails do
   end
 
   it 'does something useful' do
-    expect(false).to eq(true)
+    context = double()
+    expect(context).to receive(:link_to) { 'link_to' }
+    tabpane = Tabpane::Bootstrap::Rails::TabbedPane.new(context)
+    tabpane.link 'hello' do |tab|
+
+    end
+
+    content = tabpane.render
+    puts content
   end
 end
