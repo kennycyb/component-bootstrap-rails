@@ -10,8 +10,8 @@ module Tabpane
           @active  = options[:active]
         end
 
-        def link (name, options = {}, &block)
-          tab = Tabpane::Tab::LinkTo.new(@context, name, options)
+        def link (name, route, options = {}, &block)
+          tab = Tabpane::Tab::LinkTo.new(@context, name, route, options)
           yield(block) if block_given?
           @tabs << tab
         end
@@ -34,8 +34,7 @@ module Tabpane
 
           tabs_nav << '</ul>'
           tabs_div << '</div>'
-          puts tabs_nav
-          puts tabs_div
+
           return (tabs_nav + tabs_div)
         end
       end
