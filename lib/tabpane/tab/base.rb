@@ -6,7 +6,6 @@ module Tabpane
       attr_accessor :title
       attr_accessor :active
 
-
       def initialize (context, name, options = {})
         @context = context
         @name    = name
