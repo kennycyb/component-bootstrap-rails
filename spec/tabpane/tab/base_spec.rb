@@ -11,8 +11,39 @@ describe Tabpane::Tab::Base do
     end
   end
 
-  describe 'active?' do
+  describe '#initialize' do
+    describe '#title' do
+      context 'default title' do
+        it { expect(subject.title).to eq('name') }
+      end
 
+      context 'when title is specified' do
+        subject { Tabpane::Tab::Base.new(context, 'name', title: 'title')}
+        it { expect(subject.title).to eq('title') }
+      end
+    end
+
+    describe '#active' do
+      context 'default active' do
+        it { expect(subject.active).to be_nil }
+      end
+
+      context 'when active is specified' do
+        subject { Tabpane::Tab::Base.new(context, 'name', active: 'name') }
+        it { expect(subject.active).to eq('name') }
+      end
+    end
+
+    describe '#name' do
+      it { expect(subject.name).to eq('name') }
+    end
+
+    describe '#context' do
+      it { expect(subject.context).to eq(context) }
+    end
+  end
+
+  describe '#active?' do
     context 'when active = name' do
       before { subject.active = 'name' }
       it { expect(subject.active?).to eq(true) }
@@ -22,7 +53,6 @@ describe Tabpane::Tab::Base do
       before { subject.active = 'xyz' }
       it { expect(subject.active?).to eq(false) }
     end
-
   end
 
 end

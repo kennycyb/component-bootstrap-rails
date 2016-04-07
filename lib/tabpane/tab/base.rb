@@ -9,7 +9,7 @@ module Tabpane
       def initialize (context, name, options = {})
         @context = context
         @name    = name
-        @title   = options[:title]
+        @title   = options[:title] || name
         @active  = options[:active]
       end
 
@@ -34,9 +34,9 @@ module Tabpane
       def render
         body = content
         return '' unless body
-
+        html = ''
         html << "<div id=\"#{@name}\" class=\"tab-pane fade"
-        html << 'in active' if active?
+        html << ' in active' if active?
         html << '">'
         html << body
         html << '</div>'

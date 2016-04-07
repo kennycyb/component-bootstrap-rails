@@ -12,13 +12,13 @@ module Tabpane
 
         def link (name, route, options = {}, &block)
           tab = Tabpane::Tab::LinkTo.new(@context, name, route, options)
-          yield(block) if block_given?
+          yield(tab) if block_given?
           @tabs << tab
         end
 
         def panel (name, options = {}, &block)
           tab = Tabpane::Tab::Panel.new(@context, name, options)
-          yield(block) if block_given?
+          yield(tab) if block_given?
           @tabs << tab
         end
 

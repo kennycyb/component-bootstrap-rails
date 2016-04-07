@@ -5,12 +5,12 @@ module Tabpane
       attr_accessor :template
 
       def initialize (context, name, options = {})
-        super(context, options)
-        @template = options[:template]
+        super(context, name, options)
+        @template = options[:template] || name.to_s
       end
 
       def link
-        @context.link_to @title, "##@{name}", 'data-toggle': 'tab'
+        @context.link_to @title, "##{@name}", 'data-toggle': 'tab'
       end
 
       def content
