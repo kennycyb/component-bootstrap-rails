@@ -43,8 +43,22 @@ Add to application.scss
 <%= tabpane do |pane|
   pane.link :google, 'http://www.google.com'
   pane.link :microsoft, 'http://www.microsoft.com'
+  pane.panel :info
+  pane.panel :details
 end
 %>
+```
+
+_info.html.erb
+```
+   <h1>Info</h1>
+   Panel content for :info
+```
+
+_details.html.erb
+```
+  <h1><Details</h1>
+  Panel content for :details
 ```
 
 ## Development
