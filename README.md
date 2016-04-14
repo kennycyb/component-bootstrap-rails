@@ -39,6 +39,8 @@ Add to application.scss
 ```
 
 ### Tabpane
+
+show.html.erb
 ```
 <%= tabpane do |pane|
   pane.link :google, 'http://www.google.com'
