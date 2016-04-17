@@ -9,7 +9,7 @@ Add Bootstrap tabs easily to rails application.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tabpane-bootstrap-rails', github: 'tabpane-bootstrap-rails'
+gem 'tabpane-bootstrap-rails', github: 'kennycyb/tabpane-bootstrap-rails'
 ```
 
 And then execute:
