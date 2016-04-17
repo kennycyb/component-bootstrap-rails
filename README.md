@@ -45,8 +45,10 @@ show.html.erb
 <%= tabpane do |pane|
   pane.link :google, 'http://www.google.com'
   pane.link :microsoft, 'http://www.microsoft.com'
-  pane.panel :info
-  pane.panel :details
+  pane.panel :info      # Create a tab with content from _info.html.erb
+  pane.panel :details   # Create a tab with content from _details.html.erb
+  
+  pane.active = :info   # To specify which tab should be active
 end
 %>
 ```
