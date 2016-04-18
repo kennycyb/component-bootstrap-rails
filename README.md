@@ -40,6 +40,8 @@ Add to application.scss
 
 ### Tabpane
 
+![Sample 1](https://github.com/kennycyb/tabpane-bootstrap-rails/raw/master/docs/sample-1.png "Sample 1")
+
 show.html.erb
 ```
 <%= tabpane do |pane|
