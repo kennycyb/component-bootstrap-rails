@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Tabpane::Tab::Base do
+describe Component::Tab::Base do
 
   let(:context) { double() }
-  subject { Tabpane::Tab::Base.new(context, 'name') }
+  subject { Component::Tab::Base.new(context, 'name') }
 
   describe '#attr_accessor' do
     [:context, :name, :title, :active].each do |attr|
@@ -18,7 +18,7 @@ describe Tabpane::Tab::Base do
       end
 
       context 'when title is specified' do
-        subject { Tabpane::Tab::Base.new(context, 'name', title: 'title')}
+        subject { Component::Tab::Base.new(context, 'name', title: 'title')}
         it { expect(subject.title).to eq('title') }
       end
     end
@@ -29,7 +29,7 @@ describe Tabpane::Tab::Base do
       end
 
       context 'when active is specified' do
-        subject { Tabpane::Tab::Base.new(context, 'name', active: 'name') }
+        subject { Component::Tab::Base.new(context, 'name', active: 'name') }
         it { expect(subject.active).to eq('name') }
       end
     end

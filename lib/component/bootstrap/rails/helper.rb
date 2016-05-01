@@ -1,4 +1,4 @@
-module Tabpane
+module Component
   module Bootstrap
     module Rails
       module Helper

@@ -1,4 +1,4 @@
-module Tabpane
+module Component
   module Tab
     class LinkTo < Base
 

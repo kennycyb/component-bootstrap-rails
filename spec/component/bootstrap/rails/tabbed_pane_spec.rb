@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Tabpane::Bootstrap::Rails::TabbedPane do
+describe Component::Bootstrap::Rails::TabbedPane do
   it 'generate tabbed link' do
     context = double()
     expect(context).to receive(:link_to) { '<a href="http://www.google.com">Google</a>' }
-    tabpane = Tabpane::Bootstrap::Rails::TabbedPane.new(context)
+    tabpane = Component::Bootstrap::Rails::TabbedPane.new(context)
     tabpane.link :google, 'http://www.google.com'
     content = tabpane.render
     expect(content).to eq('<ul class="nav nav-tabs"><li><a href="http://www.google.com">Google</a></li></ul><div class="tab-content"></div>')
