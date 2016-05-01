@@ -9,7 +9,7 @@ Add Bootstrap tabs easily to rails application.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tabpane-bootstrap-rails', github: 'kennycyb/tabpane-bootstrap-rails'
+gem 'component-bootstrap-rails', github: 'kennycyb/component-bootstrap-rails'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tabpane-bootstrap-rails
+    $ gem install component-bootstrap-rails
 
 ## Usage
 
@@ -26,6 +26,10 @@ Or install it yourself as:
 
 See: https://github.com/twbs/bootstrap-sass
 
+Add to Gemfile
+```
+gem 'bootstrap-sass', '~> 3.3.6'
+```
 
 Add to application.js:
 ```
@@ -40,7 +44,7 @@ Add to application.scss
 
 ### Tabpane
 
-![Sample 1](https://github.com/kennycyb/tabpane-bootstrap-rails/raw/master/docs/sample-1.png "Sample 1")
+![Sample 1](https://github.com/kennycyb/component-bootstrap-rails/raw/master/docs/samples/tabpane.png "Sample 1")
 
 show.html.erb
 ```
@@ -49,7 +53,7 @@ show.html.erb
   pane.link :microsoft, 'http://www.microsoft.com'
   pane.panel :info      # Create a tab with content from _info.html.erb
   pane.panel :details   # Create a tab with content from _details.html.erb
-  
+
   pane.active = :info   # To specify which tab should be active
 end
 %>
@@ -75,7 +79,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kennycyb/tabpane-bootstrap-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kennycyb/component-bootstrap-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License

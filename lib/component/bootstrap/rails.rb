@@ -1,16 +1,16 @@
-require "tabpane/bootstrap/rails/version"
-require "tabpane/bootstrap/rails/tabbed_pane"
-require "tabpane/bootstrap/rails/helper"
-require "tabpane/tabs"
+require "component/bootstrap/rails/version"
+require "component/bootstrap/rails/tabbed_pane"
+require "component/bootstrap/rails/helper"
+require "component/tabs"
 
-module Tabpane
+module Component
   module Bootstrap
     module Rails
       if defined?(::Rails::Engine)
         class Engine < ::Rails::Engine
           initializer "tabpane" do
             ActiveSupport.on_load(:action_view) do
-              include Tabpane::Bootstrap::Rails::Helper
+              include Component::Bootstrap::Rails::Helper
             end
           end
         end

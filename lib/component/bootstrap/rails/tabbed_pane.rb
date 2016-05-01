@@ -1,4 +1,4 @@
-module Tabpane
+module Component
   module Bootstrap
     module Rails
       class TabbedPane
@@ -11,13 +11,13 @@ module Tabpane
         end
 
         def link (name, route, options = {}, &block)
-          tab = Tabpane::Tab::LinkTo.new(@context, name, route, options)
+          tab = Component::Tab::LinkTo.new(@context, name, route, options)
           yield(tab) if block_given?
           @tabs << tab
         end
 
         def panel (name, options = {}, &block)
-          tab = Tabpane::Tab::Panel.new(@context, name, options)
+          tab = Component::Tab::Panel.new(@context, name, options)
           yield(tab) if block_given?
           @tabs << tab
         end
